@@ -62,3 +62,39 @@ Adaptable for various applications.
 
 #GoogleDriveTips #ProductivityTools #TechHacks #GoogleAppsScript #OrganizeYourLife
 
+
+# Google Drive Folder Lister
+
+This repository contains a Google Apps Script that helps users list all subfolders from a specified Google Drive folder into a Google Sheet. It's particularly useful for managing large numbers of folders and maintaining an organized directory.
+
+## Features
+- Lists all subfolders and their URLs in a structured format.
+- Works with deeply nested folder structures.
+- Customizable to suit specific needs.
+
+## How to Use
+1. **Set Up Google Sheets:**
+   - Open a new Google Sheet.
+   - Go to `Extensions > Apps Script`.
+   - Replace any existing content with the script from `FolderLister.gs`.
+
+2. **Run the Script:**
+   - Save and run the script within the Apps Script editor.
+   - Authorize the script if prompted.
+
+3. **View Results:**
+   - Return to your Google Sheet to see a hierarchical list of all subfolders.
+
+## Customization
+You can customize the script by modifying the source code in `FolderLister.gs`. For example, you can change the starting folder or adjust the output format.
+
+## Contributions
+Contributions to this project are welcome. Feel free to fork the repository and submit pull requests.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+## Disclaimer
+This script is provided "as is," and users should use it at their own risk. We are not responsible for any loss of data or other issues that may arise from using this script.
+
+
