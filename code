@@ -1,0 +1,26 @@
+function listAllSubfolders() {
+var mainFolderId = ‘YOUR_FOLDER_ID’; // Replace with your main folder’s ID
+var mainFolder = DriveApp.getFolderById(mainFolderId);
+var data = [];
+var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+sheet.clear();
+sheet.getRange(‘A1’).setValue(‘Listing all subfolders…’);
+
+function getAllSubfolders(folder, depth) {
+var subFolders = folder.getFolders();
+while (subFolders.hasNext()) {
+var subFolder = subFolders.next();
+var prefix = ‘>’.repeat(depth); // Adds indentation for hierarchy
+data.push([prefix + subFolder.getName(), subFolder.getUrl()]);
+getAllSubfolders(subFolder, depth + 1);
+}
+}
+
+getAllSubfolders(mainFolder, 0);
+if (data.length > 0) {
+sheet.getRange(2, 1, data.length, 2).setValues(data); // Populates the sheet
+} else {
+sheet.getRange(‘A1’).setValue(‘No subfolders found’);
+}
+sheet.getRange(‘B1’).setValue(‘Complete’);
+}
